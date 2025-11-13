@@ -40,13 +40,15 @@ Het programma leest een naam, achternaam en leeftijd in en toont de informatie e
 
 Schrijf JavaScript dat:
 
-1. Drie variabelen inleest: voornaam, achternaam en leeftijd.
+1. Drie variabelen inleest met behulp van de prompt-functie: voornaam, achternaam en leeftijd.
 2. Controleert dat naam en achternaam niet leeg zijn.
 3. Controleert dat de leeftijd tussen 12 en 60 jaar ligt.
 4. Geeft passende meldingen bij ongeldige invoer:
     - **Naam/Achternaam ontbreekt:** "Vul zowel voornaam als achternaam in!"
     - **Leeftijd niet tussen 12 en 60:** "U behoort niet tot de gezochte leeftijdsklasse!"
 5. Vormt de boodschap correct en toont deze met `console.log()`.
+
+> **TIP**: de prompt-functie zal altijd een string teruggeven, aan jou om deze input om te zetten naar een geheel nummer mbhv. de parseInt functie.
 
 ## Oefening 2: Schrikkeljaar
 
@@ -56,11 +58,11 @@ Schrijf JavaScript dat:
 
 #### Functionele analyse
 
-De website bevat een invoerveld voor een jaartal en jouw programma bepaalt of het een schrikkeljaar is.
+Het programma vraagt de gebruiker om een jaartal en jouw programma bepaalt of het een schrikkeljaar is.
 
 #### Technische analyse
 
-1. Een variabele bevat het jaartal.
+1. Vraag een gebruiker om een jaartal met de prompt-functie.
 2. Het programma bepaalt of het een schrikkeljaar is volgens de regels:
     - Een jaar is een schrikkeljaar als het deelbaar is door **4**,
     - Behalve als het deelbaar is door **100**, tenzij het ook deelbaar is door **400**.
@@ -79,8 +81,8 @@ Het programma voert een eenvoudige berekening uit met twee getallen en een opera
 
 #### Technische analyse
 
-1. Twee variabelen bevatten de getallen.
-2. Een derde variabele bevat de operator.
+1. Vraag de gebruiker eerst om twee getallen met de prompt-functie.
+2. Vraag de gebruiker daarna om een operator.
 3. Gebruik `if`-statements om de juiste berekening uit te voeren.
 4. Voer een controle uit zodat er niet door **0** wordt gedeeld.
 5. Toon een foutmelding bij een ongeldige operator.
@@ -116,15 +118,15 @@ Het programma simuleert een klok die een tijdstip berekent na optelling van een 
 
 1. De gebruiker voert een **startuur** en **startminuten** in.
 2. Twee extra variabelen bevatten de uren en minuten die moeten worden opgeteld.
-3. Controleer dat alle invoervelden ingevuld zijn.
-4. Bereken het nieuwe tijdstip:
+3. Bereken het nieuwe tijdstip:
     - **Minuten overschrijden 60?** → Tel extra uren op.
     - **Uren overschrijden 24?** → Bereken hoeveel dagen erbij komen.
-5. Geef de output correct weer:
+4. Geef de output correct weer:
     - "Dit tijdstip valt nog op dezelfde dag."
     - "Dit is het tijdstip **1 dag later**."
     - "Dit is het tijdstip **X dagen later**."
-6. Gebruik **modulo (`%`)** en `Math.floor()` voor de berekening.
+
+> **TIP**: Gebruik **modulo (`%`)** en `Math.floor()` voor de berekening.
 
 ## Oefening 6: Cijfer omzetten naar tekst
 
@@ -136,7 +138,7 @@ Het programma simuleert een klok die een tijdstip berekent na optelling van een 
 Een student krijgt een cijfer (0-10). Het programma zet dit cijfer om in een tekstuele beoordeling.
 
 ### Technische analyse
-- Lees een cijfer in een variabele.
+- Vraag een gebruiker om een cijfer tussen de 0 en 10 in te voeren via de prompt-functie 
 - Gebruik een switch-statement om het cijfer om te zetten naar:
     - 0-2: "Zeer slecht"
     - 3-4: "Onvoldoende"
@@ -174,33 +176,15 @@ Schrijf een programma dat temperaturen kan omrekenen tussen Celsius en Fahrenhei
 
 ### Technische analyse
 - Genereer een willekeurig getal tussen 1 en 10.
-- Vraag de gebruiker om een gok (simuleer dit met een variabele).
+- Vraag de gebruiker om een gok met behulp van de prompt-functie.
 - Controleer of het getal juist is:
     - Zo ja, toon: "Gefeliciteerd, je hebt het juiste getal geraden!"
     - Zo nee, toon: "Helaas, het juiste getal was X."
 - Toon het resultaat in de console.
 
-## Oefening 9: Willekeurig getal
+> **Tip**: Om een willekeurig getal te genereren kun je gebruik maken van de `Math.random()` functie. Deze functie zal altijd een kommagetal tussen 0 en 1 teruggeven (soms exact 0, maar nooit exact 1). Met de volgende functie kun je dit willekeurig kommagetal omzetten naar een geheel getal tussen twee getallen: `Math.floor(Math.random() * (maximumGetal - minimumGetal) + minimumGetal)`.
 
-### Leerdoelen
-- Willekeurige getallen
-
-### Functionele analyse
-**Genereer** een willekeurig getal tussen 1 en 10 en sla het op in een variabele `answer`. De gebruiker moet raden welk getal het is.
-
-### Technische analyse
-- Genereer een willekeurig getal tussen 1 en 10 en sla deze op in een variabele "answer".
-- Vraag de gebruiker om een gok (simuleer dit met een variabele).
-- Controleer of het getal juist is:
-    - Zo ja, toon: "Gefeliciteerd, je hebt het juiste getal geraden!"
-    - Zo nee, toon: "Helaas, het juiste getal was X."
-- Toon het resultaat in de console.
-
-**Hint**: Om een willekeurig getal te genereren kun je gebruik maken van de `Math.random()` functie. Deze functie zal altijd een kommagetal tussen 0 en 1 teruggeven (soms exact 0, maar nooit exact 1). Met de volgende functie kun je dit willekeurig kommagetal omzetten naar een geheel getal tussen twee getallen: `Math.floor(Math.random() * (maximumGetal - minimumGetal) + minimumGetal)`.
-
-Zorg dat je deze formule begrijpt. Bekijk hiervoor wat gebeurt als `Math.random()` de zijn kleinste en grootste mogelijke waarden aanneemt.
-
-## Oefening 10: Maaltafelgenerator
+## Oefening 9: Maaltafelgenerator
 
 ### Leerdoelen
 
@@ -221,7 +205,7 @@ Je programma genereert op basis van een hardgecodeerde waarde een maaltafelreeks
 - Gebruik een for-loop om de maaltafelreeks op te bouwen en voeg elk resultaat toe aan de string, gescheiden door een ", ".
 - Print de maaltafel uit in de console.
 
-## Oefening 11: Raster Generator
+## Oefening 10: Raster Generator
 
 ### Leerdoelen
 
@@ -243,7 +227,7 @@ Je programma genereert een raster van kruisjes op basis van hardgecodeerde waard
 
 ---
 
-## Oefening 12: Raad het Getal
+## Oefening 11: Raad het Getal
 
 ### Leerdoelen
 
@@ -263,7 +247,7 @@ Het programma laat de gebruiker een getal raden tussen 0 en 30. De invoer is har
 - Geef aan of het getal hoger of lager moet zijn.
 - Stop zodra het juiste getal geraden is.
 
-## Oefening 13: Som van Even Getallen
+## Oefening 12: Som van Even Getallen
 
 ### Leerdoelen
 
@@ -283,7 +267,7 @@ Je programma berekent de som van alle even getallen tot en met een bepaalde hard
 - Controleer of het getal even is en tel het op bij de som.
 - Print de uiteindelijke som uit.
 
-## Oefening 14: Aftellen
+## Oefening 13: Aftellen
 
 ### Leerdoelen
 
@@ -303,7 +287,7 @@ Je programma telt af vanaf een hardcoded startwaarde tot nul en print bij elke s
 - Stop zodra het getal nul bereikt.
 
 
-## Oefening 15: Fibonacci-reeks
+## Oefening 14: Fibonacci-reeks
 
 ### Leerdoelen
 
